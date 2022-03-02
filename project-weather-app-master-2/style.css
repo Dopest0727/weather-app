@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.main-page {
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  max-width: 600px;
+}
+/* ===== ICON  ===== */
+
+.weather-icon {
+  -webkit-animation: rotate-scale-up 1s 1s both;
+  animation: rotate-scale-up 1s 1s both;
+}
+
+/* ===== ICON ANIMATION ===== */
+
+@-webkit-keyframes rotate-scale-up {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+    transform: scale(1) rotateZ(0);
+  }
+  50% {
+    -webkit-transform: scale(1.5) rotateZ(180deg);
+    transform: scale(1.5) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateZ(360deg);
+    transform: scale(1) rotateZ(360deg);
+  }
+}
+@keyframes rotate-scale-up {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+    transform: scale(1) rotateZ(0);
+  }
+  50% {
+    -webkit-transform: scale(1.5) rotateZ(180deg);
+    transform: scale(1.5) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateZ(360deg);
+    transform: scale(1) rotateZ(360deg);
+  }
+}
+
+.todays-weather,
+.forecast-day,
+.cities {
+  font-size: 1.25rem;
+}
+
+.todays-weather {
+  margin-bottom: 2rem;
+}
+
+.todays-weather p {
+  margin: 0.25rem;
+}
+
+.todays-advice {
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+.forecast-day {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.1rem dotted;
+  line-height: 0.2rem;
+  padding-bottom: 1rem;
+  justify-content: space-between;
+}
+
+span {
+  width: 50%;
+  text-align: end;
+}
+
+/* ===== removes the last dotted line of the last child ===== */
+
+#forecastDay:last-child {
+  border-bottom: none;
+}
+
+.forecast-description,
+.long-day {
+  display: none;
+}
+
+.short-day {
+  display: flex;
+}
+
+.long-day {
+    display: none;
+}
+
+.cities {
+  display: flex;
+  justify-content: space-between;
+  line-height: 0.2rem;
+  padding-bottom: 1rem;
+  padding-top: 2rem;
+  display: none;
+  text-align: center;
+}
+
+.city {
+  border: solid 1px;
+  border-radius: 0.4rem;
+  padding: 3px 25px;
+  width: 12rem;
+}
+
+/* ===== MEDIA QUERIES FOR IPAD AND DESKTOP ===== */
+
+@media screen and (min-width: 800px) {
+  .cities {
+    display: flex;
+  }
+
+  .long-day {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .main-page {
+    max-width: 800px;
+  }
+  
+  .cities {
+    display: flex;
+  }
+
+  .short-day {
+    display: none;
+  }
+  
+  .long-day {
+    display: flex;
+  }
+
+  .forecast-description {
+    display: flex;
+    width: 33%;
+    justify-content: center;
+  }
+}
